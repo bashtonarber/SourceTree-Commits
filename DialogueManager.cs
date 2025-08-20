@@ -87,8 +87,8 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.gameObject.SetActive(false);
             dialogueText2.gameObject.SetActive(true);
-            nameBox[0].gameObject.SetActive(true);
-            nameBox[1].gameObject.SetActive(false);
+            nameBox[0].gameObject.SetActive(false);
+            nameBox[1].gameObject.SetActive(true);
         }
         else if (dialogueText2.gameObject.activeInHierarchy)
         {
@@ -199,5 +199,6 @@ else
 gameObject.SetActive(false);
 }
 }*/
+
 
 
