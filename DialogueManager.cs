@@ -6,6 +6,13 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Rendering;
 
+/*DIALOGUE MANAGER!
+This script is a part of the Dialogue system that is being used in a Horror game that I am working on. 
+
+
+
+*/
+
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI[] nameText;
@@ -192,4 +199,5 @@ else
 gameObject.SetActive(false);
 }
 }*/
+
 
