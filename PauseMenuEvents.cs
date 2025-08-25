@@ -5,25 +5,41 @@ using System.Collections.Generic;
 
 public class PauseMenuEvents : MonoBehaviour
 {
+
+/* 
+PAUSE MENU (INCLUDING SETTINGS MENU) - To work with the Unity UI Toolkit.
+
+This script was written as a way to play around with the UI Toolkit and to see how efficient it is to create a menu that is used frequently. 
+After having a play around with it, the flow of it proved to be really useful and feels just as good as the UI Canvas.
+
+*/
+
+    // UIDocument that will be used throughout.
     private UIDocument _pauseDocument;
 
+    // Button variables that will be used to line up with the UIDocument.
     private Button _continueButton;
     private Button _settingsButton;
     private Button _mainMenuButton;
     private Button _closeGameButton;
     private Button _closeSettingsButton;
 
+    // Toggles for the Audio. 
     private Toggle _musicToggle;
     private Toggle _sfxToggle;
 
+    // Each VisualElement that is included in the UIDocument.
     private VisualElement _pauseBGElement;
     private VisualElement _settingsBGElement;
 
+    // The list for the buttons that will be checked.
     private List<Button> _pauseMenuButtons = new List<Button>();
 
+    // AudioSources that will be used in the Settings.
     public AudioSource _musicSource;
     public AudioSource _sfxSource;
 
+    // Bools that will be checked on certain functions.
     private bool gameIsPaused;
     private bool settingsOpened;
     private bool musicToggled;
@@ -194,3 +210,4 @@ public class PauseMenuEvents : MonoBehaviour
         _musicSource.Play();
     }
 }
+
