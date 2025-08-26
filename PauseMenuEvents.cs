@@ -45,16 +45,20 @@ After having a play around with it, the flow of it proved to be really useful an
     private bool musicToggled;
     private bool sfxToggled;
 
+//Awake function to trigger on launch.
     void Awake()
     {
+//Ensuring that the Bools are set to what's expected.
         gameIsPaused = false;
         settingsOpened = false;
         musicToggled = true;
         sfxToggled = true;
 
+//Getting the required components for this script
         _pauseDocument = GetComponent<UIDocument>();
         _musicSource = GetComponent<AudioSource>();
 
+//Declaring what each button is on the UIDocument
         _continueButton = _pauseDocument.rootVisualElement.Q("ContinueButton") as Button;
         _settingsButton = _pauseDocument.rootVisualElement.Q("SettingsButton") as Button;
         _mainMenuButton = _pauseDocument.rootVisualElement.Q("MainMenuButton") as Button;
