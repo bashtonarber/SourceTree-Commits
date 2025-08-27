@@ -99,11 +99,13 @@ After having a play around with it, the flow of it proved to be really useful an
 
     void Update()
     {
+        //Inputs to call the function to Pause or unpause the game.
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             PauseResumeGame();
         }
 
+        //Input to close the Settings VisualElements.
         if (Input.GetMouseButtonDown((int)MouseButton.RightMouse))
         {
             if (_settingsBGElement.style.display == DisplayStyle.Flex)
@@ -113,6 +115,7 @@ After having a play around with it, the flow of it proved to be really useful an
             }
         }
 
+        //Checks if the toggle is true or false and then changes the volume to match. 
         if (musicToggled)
         {
             _musicToggle.value = true;
@@ -126,6 +129,7 @@ After having a play around with it, the flow of it proved to be really useful an
 
         }
 
+        //Checks if the toggle is true or false and then changes the volume to match. 
         if (sfxToggled)
         {
             _sfxToggle.value = true;
@@ -138,10 +142,11 @@ After having a play around with it, the flow of it proved to be really useful an
             _sfxSource.volume = 0;
         }
 
-        print(Time.deltaTime);
+        //print(Time.deltaTime);
       
     }
 
+    //Function to change the Tool bool for the music.
     void ToggleMusic(ClickEvent evt)
     {
         if (musicToggled)
@@ -154,6 +159,7 @@ After having a play around with it, the flow of it proved to be really useful an
         }
     }
 
+    //Function to change the Tool bool for the SFX.
     void ToggleSFX(ClickEvent evt)
     {
      if (sfxToggled)
@@ -166,12 +172,14 @@ After having a play around with it, the flow of it proved to be really useful an
         }
     }
 
+    //Function to close the Pause VisualElement - This is used with the UIDocument button.
     void ResumeGame(ClickEvent evt)
     {
         _pauseBGElement.style.display = DisplayStyle.None;
         Time.timeScale = 1;
     }
 
+    //Function to open and close the Puase VisualElement - This is used with the keyboard Input.
     void PauseResumeGame()
     {
         if (gameIsPaused)
@@ -188,6 +196,7 @@ After having a play around with it, the flow of it proved to be really useful an
         }
     }
 
+    //Function to open and close the Settings VisualElement - This is used with the UIDocument button.
     void SettingsMenuOpenClose(ClickEvent evt)
     {
         if (!settingsOpened)
@@ -201,25 +210,27 @@ After having a play around with it, the flow of it proved to be really useful an
             _settingsBGElement.style.display = DisplayStyle.None;
             _pauseBGElement.style.display = DisplayStyle.Flex;
             settingsOpened = false;
-        }
-
-  
+        }  
     }
 
+    //Function to return to the Main Menu - This is used with the UIDocument button.
     void ReturnToMM(ClickEvent evt)
     {
         SceneManager.LoadScene("MainMenu");
     }
 
+    //Function to close the game - This is used with the UIDocument button.
     void CloseGame(ClickEvent evt)
     {
         Application.Quit();
     }
 
+    //Function to play a sound when a button is pressed - This is used with the UIDocument button.
     void OnAllButtons(ClickEvent evt)
     {
         _musicSource.Play();
     }
 }
+
 
 
