@@ -1,4 +1,4 @@
-# UI-Dev-Portfolio
+# SourceTree-Commits
 
 This Repository containts vairous screenshots from SourceTree that was used during ym time at University to demonstrate my familiarity with commiting my work for the team project. 
 
